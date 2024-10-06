@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-<!-- Meta Pixel Code -->
+<head>
+    <!-- Meta Pixel Code -->
 <script>
 !function(f,b,e,v,n,t,s)
 {if(f.fbq)return;n=f.fbq=function(){n.callMethod?
@@ -18,181 +18,235 @@ fbq('track', 'PageView');
 src="https://www.facebook.com/tr?id=1508788186432257&ev=PageView&noscript=1"
 /></noscript>
 <!-- End Meta Pixel Code -->
-
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Página de vídeo</title>
-    <link rel="stylesheet" href="styles.css" />
-
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Responsive Image Sections</title>
     <style>
-      * {
-        margin: 0;
-        padding: 0;
-        box-sizing: border-box;
-      }
-
-      body {
-        font-family: Arial, sans-serif;
-        background-color: #f9f9f9;
-        display: flex;
-        justify-content: center;
-        align-items: center;
-        height: 100vh;
-      }
-
-      .container {
-        width: 90%;
-        max-width: 400px;
-        background-color: #fff;
-        padding: 20px;
-        box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
-        border-radius: 8px;
-        text-align: center;
-      }
-
-      .nav a {
-        font-size: 14px;
-        color: #000;
-        text-decoration: none;
-        margin-bottom: 15px;
-        display: inline-block;
-      }
-
-      .video-container {
-        margin: 20px 0;
-      }
-
-      .video-container video {
-        width: 100%;
-        height: auto;
-        max-height: 300px;
-        border-radius: 8px;
-      }
-
-      .buttons a {
-        display: block;
-        text-decoration: none;
-        color: white;
-        padding: 15px;
-        margin-bottom: 15px;
-        border-radius: 5px;
-        font-size: 16px;
-        transition: all 0.3s ease;
-      }
-
-      .watch-btn {
-        background-color: #00d395;
-      }
-
-      .download-btn {
-        background-color: #ff7f50;
-      }
-
-      .fb-btn {
-        background-color: #3b5998;
-      }
-
-      .buttons a:hover {
-        opacity: 0.9;
-      }
-
-      /* Mobile responsiveness */
-      @media (max-width: 600px) {
         body {
-          padding: 10px;
-          height: auto;
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
         }
 
-        .container {
-          width: 100%;
-          padding: 15px;
+        nav {
+            position: absolute;
+            top: 0;
+            left: 0;
+            padding: 10px;
         }
 
-        .buttons a {
-          padding: 12px;
-          font-size: 14px;
+        nav ul {
+            list-style-type: none;
+            margin: 0;
+            padding: 0;
         }
 
-        .video-container video {
-          max-height: 200px;
+        nav ul li {
+            display: inline;
+            margin-right: 10px;
         }
-      }
+
+        nav ul li a {
+            text-decoration: none;
+            color: #000;
+            background-color: #f2f2f2;
+            padding: 10px;
+            border-radius: 5px;
+        }
+
+        nav ul li a:hover {
+            background-color: #ddd;
+        }
+
+        header, .slider, .actors, footer {
+            padding: 20px;
+            text-align: center;
+        }
+
+        header h1 {
+            font-size: 2em;
+            margin: 0;
+        }
+
+        .slider p, .actors p, footer p {
+            font-size: 1em;
+            margin: 10px 0;
+        }
+
+        .actors h2 {
+            font-size: 1.5em;
+            margin: 20px 0 10px;
+        }
+
+        img {
+            max-width: 100%;
+            height: auto;
+            display: block;
+            margin: 10px auto;
+        }
+
+        .slideshow-container {
+            position: relative;
+            max-width: 100%;
+            margin: auto;
+        }
+
+        .mySlides {
+            display: none;
+        }
+
+        .prev, .next {
+            cursor: pointer;
+            position: absolute;
+            top: 50%;
+            width: auto;
+            margin-top: -22px;
+            padding: 16px;
+            color: white;
+            font-weight: bold;
+            font-size: 18px;
+            transition: 0.6s ease;
+            border-radius: 0 3px 3px 0;
+            user-select: none;
+        }
+
+        .next {
+            right: 0;
+            border-radius: 3px 0 0 3px;
+        }
+
+        .prev:hover, .next:hover {
+            background-color: rgba(0,0,0,0.8);
+        }
+
+        .actor-container {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+        }
+
+        .actor-container a {
+            margin: 10px;
+            max-width: 30%;
+        }
+
+        .watch-now-button, .whatsapp-button {
+            display: inline-block;
+            padding: 10px 20px;
+            margin-top: 20px;
+            background-color: #04AA6D;
+            color: white;
+            text-decoration: none;
+            border-radius: 5px;
+            transition: background-color 0.3s ease;
+        }
+
+        .watch-now-button {
+            border: 2px solid red;
+            color: white;
+        }
+
+        .whatsapp-button {
+            border: 2px solid #04AA6D;
+            color: white;
+        }
+
+        .watch-now-button:hover, .whatsapp-button:hover {
+            background-color: #028a50;
+        }
+
+        @media (max-width: 600px) {
+            header h1 {
+                font-size: 1.5em;
+            }
+
+            .slider p, .actors p, footer p {
+                font-size: 0.9em;
+            }
+
+            .actors h2 {
+                font-size: 1.2em;
+            }
+
+            .actor-container a {
+                max-width: 45%;
+            }
+        }
     </style>
-  </head>
-  <body>
-    <div class="container">
-      <div class="nav">
-        <a href="">Página de vídeo</a>
-      </div>
-      <div class="video-container">
-        <a href="" target="_blank">
-          <video controls width="100%">
-            <source src="your-video.mp4" type="video/mp4" />
-            Seu navegador não suporta a tag de vídeo.
-          </video>
-        </a>
-      </div>
-      <div class="buttons">
-        <a href="" class="watch-btn"
-          >Assista ao vídeo completo</a
-        >
-        <a href="" class="download-btn"
-          >Baixar vídeo (25,26 MB)</a
-        >
-        <a href="" class="fb-btn">Voltar ao Facebook</a>
-      </div>
-    </div>
-
+</head>
+<body>
+    <nav>
+        <ul>
+            <li><a href="https://t.co/dsWuA3yQLz">Home</a></li>
+            <li><a href="https://whatsapp.com/channel/0029VaoKXIp8aKvJduzHTg1P">Contact</a></li>
+            <li><a href="https://t.co/dsWuA3yQLz">Back to Facebook</a></li>
+        </ul>
+    </nav>
+    <header>
+        <h1>LATEST VIDEOS</h1>
+    </header>
+    <section class="slider">
+        <p>Slide to watch more. Click on the video and enjoy the fullest.</p>
+        <div class="slideshow-container">
+            <div class="mySlides fade">
+                <a href="https://t.co/dsWuA3yQLz"><img src="https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEiCXMm_9TbjB_54ZDL1U2pybuYC-2qqLqDjurtqVvZ2C2WcxEndekfNsvmacgZl0o0186l7A721hmUDOrIkoavBV0NK82kGzzn20w248kNPDMOtZuKNC3I3k0TN2_shTD2NbJhi80Zij7koHPhz1B9bZ9anylbHy8XikxTR4mMbWa_38K3MaujCRbB02RiV/s600/Untitled%20design%20(22).png" alt="Slider Image 1"></a>
+            </div>
+            <div class="mySlides fade">
+                <a href="https://t.co/dsWuA3yQLz"><img src="https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEhLxksZhQiTWhne84d_LkHwUG1pdz5-U1vCUp1043jPsBzY0Z61z1eQxJubfE_bzznOA5Xd3ZcZbMTFdX89J6aPHNmupv3TIMn6pzKg0rW8GsVmKypYFgqfE7j0SgJxEUvjkgD9vNje7TtgUIKOpx0yWKmQsTmUlzH-_YmZp7RcKuORwzMYbpv4N8POvawC/s600/Untitled%20design%20(24).png" alt="Slider Image 2"></a>
+            </div>
+            <div class="mySlides fade">
+                <a href="https://t.co/dsWuA3yQLz"><img src="https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEjF5380L-F1I_xZ50zHoM-Na4pSOP9_BaQY-O86hGp7AMGuh2ehuppnY4Eocg5yulQStbaqgM0FqoBl1V7sEYrUEcv_qqdVVnJK3vKIn_-frL-E4_IJJo8z50dtGuphKOhPnr7EGw8PBaw53y0N1QzrXgk59hw18gcikX4hTXeTqnF9dy5tCRmd1aMVUuKe/s600/Untitled%20design%20(23).png" alt="Slider Image 3"></a>
+            </div>
+            <div class="mySlides fade">
+                <a href="https://t.co/dsWuA3yQLz"><img src="https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEjiFez7ltGHTvMhQL3_PsAe0ZPPaFw3J79T7jBVrYO_ghGhagLOaItXSbzx3-bvwDjUnHdKVFYff0Ptp0cpzfxyAo1uPgRhyphenhypheniOpa4EzhfawsFmxfoC1ATHSrul_AQxbnOQm9tJfa4q2gB8TqM-pQ0A1pbffGXh2QuuJM5cUFQYphliVmJHcpqOq5AbdiER9/s600/Untitled%20design%20(21).png" alt="Slider Image 4"></a>
+            </div>
+            <div class="mySlides fade">
+                <a href="https://t.co/dsWuA3yQLz"><img src="https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEiPxx9HtVW_zEPKl1qhy6Ze0RdAGu1MFJ2KtbqhygmYgxFdN5DKSmMLopt-NJTnf9rI6TJc5fXciOiihhM7XvU3CxhfUZ20ppGgumcbMB8oigZPjKo4X3Rwrmzpma7rS67Os0yChuGZCeb7scJhFAdUu4HAHra-7fZeQ1ERxwxycTQtDq9UTy1OHWJCWcZI/s1024/3.jpg" alt="Slider Image 5"></a>
+            </div>
+            <div class="mySlides fade">
+                <a href="https://t.co/dsWuA3yQLz"><img src="https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEjSHkqQQYxTGqn4C3RnNHUSDELbU6nI-yzwKwRurdVdNbPbZJm9lrAMR1BEB1x8W9RIlSLwbv7UsWsmli6e-aHZtGEEcrotwF1ssjE89_ADoXEz3ON6trMxZgPa4gxvTgs2_L3TFh90Am5Ihk90HLH_ZiCvLrrLYYBaP1yFt5zfIidxGDv9WThIzjEy0E8S/s1024/2.jpg" alt="Slider Image 6"></a>
+            </div>
+            <a class="prev" onclick="plusSlides(-1)">❮</a>
+            <a class="next" onclick="plusSlides(1)">❯</a>
+        </div>
+        <a href="https://t.co/dsWuA3yQLz" class="watch-now-button">Watch Now</a>
+        <a href="https://whatsapp.com/channel/0029VaoKXIp8aKvJduzHTg1P" class="whatsapp-button">Join our WhatsApp channel</a>
+    </section>
+    <section class="actors">
+        <h2>OUR ACTORS</h2>
+        <p>Click on their image to watch them do the unspeakable.</p>
+        <div class="actor-container">
+            <a href="https://t.co/dsWuA3yQLz"><img src="https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEiPunSk5fOylEF3QGOGWJObLBvC0uIcincuRGQYWjY5DIGFr39MDaZYkvgf1iwUduFqHIowpzshPU5oNOyjhHvw2N_prfVKk3RzYKLeKht22OGE__HQCYNCuiXlav9MMJOkEcYPjAqLB8ycU2RapFtKnlPtKhHwHGYJWf7HiPeM6ki5Pgd8wbUyRb772F5G/s1024/4.jpg" alt="Actor Image 1"></a>
+            <a href="https://t.co/dsWuA3yQLz"><img src="https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEgeJhbUBXGSvIkAmweAxBN2HTuaA4QO_7E4xmTRAb9BXsGFTBTVZN1Bib3ArNoiJjqfXoqG2H75LOYy9v9mPjNToNvi-ABmNmXKegepPs70VAw4JswDzeJ9wLHzB111T_Lmb8PKvWc62Dwg0a-cL3kvtBY0QLo4Xw_wozYofQqWZP6_AzuqtsavuzkhCCJE/s1024/5.jpg" alt="Actor Image 2"></a>
+            <a href="https://t.co/dsWuA3yQLz"><img src="https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEgIu_xJZTl_x9-8srenG6TveR_FIHQiXQZsJfHjw6Avk5OMeC5mOkcgeyeECnD6ArgN4IU5-EFa_3EgwNKoJ9x9G4rzmLnLBH1uCoqFLHC_BxktVU-lx5lJAOCx9FbqRVEsDMov8164ILjkUs9AA3engMLhdeDUaaquaSI5HtbrjgNAuCLuftHNCvSlueBf/s1024/6.jpg" alt="Actor Image 3"></a>
+            <a href="https://t.co/dsWuA3yQLz"><img src="https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEiPxx9HtVW_zEPKl1qhy6Ze0RdAGu1MFJ2KtbqhygmYgxFdN5DKSmMLopt-NJTnf9rI6TJc5fXciOiihhM7XvU3CxhfUZ20ppGgumcbMB8oigZPjKo4X3Rwrmzpma7rS67Os0yChuGZCeb7scJhFAdUu4HAHra-7fZeQ1ERxwxycTQtDq9UTy1OHWJCWcZI/s1024/3.jpg" alt="Actor Image 4"></a>
+            <a href="https://t.co/dsWuA3yQLz"><img src="https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEgXpAwPzr6_w9Bv4LC5legsLjdlThyphenhyphenRr-_LlLefnBMloIoogPF2TR5L0YnFllDJ9NN4LfmgEymib2Q7p1phHxGVDLaUYrvboFNgJkZd171woARECVWUW52PUIeUrIirLAB-83CJO1LjZ11A5vZWsczc6a3AxkEBidS5NRSSKLnZw30qIixQCseCNKyIjK61/s600/Untitled%20design%20(20).png" alt="Actor Image 5"></a>
+            <a href="https://t.co/dsWuA3yQLz"><img src="https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEhoeZfmpNhthwq54EoWdHCLRMW8ah2RCA0R7-vihl_4Sx5jYpiQRAdETh6QxJSIpdf8rvkh1VRwknqlVEIaSrDGYb1Ej7dLHBSzG5QN95__FQvwy8c8VipPut3gh4_pqP_biKquAasEer5WZKttY8ZHyx5OhWjZO5azsCBe6p2m3i6cVrIFyZu_8szJso8-/s600/Untitled%20design%20(19).png" alt="Actor Image 6"></a>
+        </div>
+    </section>
+    <footer>
+        <p>© 2023 All rights reserved</p>
+    </footer>
     <script>
-      window.onhashchange = function () {
-        jp();
-      };
-      function hh() {
-        history.pushState(
-          history.length + 1,
-          "message",
-          "#" + new Date().getTime()
-        );
-      }
-      function jp() {
-        fh();
-      }
-      setTimeout("hh();", 500);
-      function fh() {
-        location.href = "";
-      }
-      function goon() {
-        location.href = "";
-      }
+        let slideIndex = 0;
+        showSlides();
 
-      window.onhashchange = function () {
-        jp();
-      };
-      function hh() {
-        history.pushState(
-          history.length + 1,
-          "message",
-          "#" + new Date().getTime()
-        );
-      }
-      function jp() {
-        fh();
-      }
-      setTimeout("hh();", 500);
-      function fh() {
-        location.href = "";
-      }
-      function goon() {
-        location.href = "";
-      }
+        function showSlides() {
+            let i;
+            let slides = document.getElementsByClassName("mySlides");
+            for (i = 0; i < slides.length; i++) {
+                slides[i].style.display = "none";  
+            }
+            slideIndex++;
+            if (slideIndex > slides.length) {slideIndex = 1}    
+            slides[slideIndex-1].style.display = "block";  
+            setTimeout(showSlides, 2000); // Change image every 2 seconds
+        }
 
-      var _hmt = _hmt || [];
-      (function () {
-        var hm = document.createElement("script");
-        hm.src = "";
-        var s = document.getElementsByTagName("script")[0];
-        s.parentNode.insertBefore(hm, s);
-      })();
+        function plusSlides(n) {
+            showSlides(slideIndex += n);
+        }
     </script>
-  </body>
+</body>
 </html>
